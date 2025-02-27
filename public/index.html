@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
+
   <body>
-    <h1>My Page</h1>
+    <nav>
+        <div class="nav-wrapper teal" style="padding-left: 10px;">
+           <a href="#!" class="brand-logo">Ajax Demo</a>
+        </div>
+    </nav>
+    <main class="row" style="padding: 40px">
+         <table>
+           <thead>
+                <tr>
+                   <th>#</th>
+                   <th>name</th>
+                   <th>Type</th>
+                   <th>website</th>
+                </tr>
+                </thead>
+                  <tbody id="result">
+                                                
+                  </tbody>
+           </table>
+     </main>
+     <script>
 
-    <input type="button" id="alertBtn" value="click me" onclick="alertFun()"/>
-    <input type="button" value="confirm" onclick="confirmFun()"/>
-    <input type="button" value="prompt" onclick="promptFun()"/>
-    <!--value puts text on the button-->
-    <span id="result"></span>
+        function drawTable(records){
+            let result = document.querySelector('#result');
+            //add html code inside of result
+            let html = '';// create html string
+            for(let record of records){
+                //build html string
+                html += `<tr>
+                  <td>${record.id}</td>
+                  <td>${record.name}</td>
+                  <td>${record.brewery_type}</td>
+                  <td>${record.website_url}</td>    
+                </tr>`;
+            }
+            result.innerHTML = html;//add html string to DOM
+        }
 
-    <input id="myBtn" type="button" onclick="myFun()" value="click me"/>
+        //testing the function
+        drawTable([{
+          id: 1,
+          name: "bob's",
+          brewery_type: "fire",
+          website_url:"https://bobs.com"
+        }]);
 
-    <img id="myIMG" src="https://placecage.lucidinternets.com/200/300" alt="" onload="loaded()">
+        drawTable([{
+          id: 2,
+          name: "joe's",
+          brewery_type: "water",
+          website_url:"https://joes.com"
+        }]);
 
-<script>
-    function loaded() {
-      console.log('Image loaded');
-    }
-</script>
-   
+     </script>
   </body>
 </html>

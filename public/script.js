@@ -1,49 +1,18 @@
-let bob = {
-    name: 'Bob',
-    balance: 10
-  }
-  
-  function add10(a){
-    a.balance+= 10; // a is a pointer/reference to myObj
-  }
-  
-  console.log(bob.balance);//10
-  add10(bob);
-  console.log(bob.balance);//20
-
-  let myobj = {name: 'John', age: 31, city: 'New York'};
-  let obj2 = myobj;
-
-  //obj2 and myobj are the same variable
-  
-  obj2.name = "Shelly";
-  
-  console.log(myobj.name);//Shelly
-  
-  //if you need to create a new object and copy its values use Object.assign
-  
-  let obj3 = {};
-  Object.assign(obj3, myobj);
-  
-  obj3.name = 'Smith';
-  
-  console.log(myobj.name, obj3.name);//Shelly, Smith
-
-
-  // task 5
-  let obj2 = myobj;
-
-  //obj2 and myobj are the same variable
-  
-  obj2.name = "Shelly";
-  
-  console.log(myobj.name);//Shelly
-  
-  //if you need to create a new object and copy its values use Object.assign
-  
-  let obj3 = {};
-  Object.assign(obj3, myobj);
-  
-  obj3.name = 'Smith';
-  
-  console.log(myobj.name, obj3.name);//Shelly, Smith
+// if a record looks like.
+let record = {
+    id: 1,
+    name: "bob's"
+    brewery_type: "fire",
+    website_url:"https://bobs.com"
+ } 
+ 
+ //*note the use of backticks
+ //using string interpolation
+ //a row in the table would look like;
+ 
+ Let row = `<tr> 
+     <td>${record.id}</td>
+     <td>${record.name}</td>
+     <td>${record.brewery_type}</td>
+     <td>${recoard.website_url}</td>    
+ </tr>`;
