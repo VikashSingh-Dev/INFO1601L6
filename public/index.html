@@ -16,9 +16,27 @@
     <span id="result"></span>
 
     <script>
+   function alertFun(){
+    alert("Hello !");
+   }
+   /*sends alert message*/
 
+   function confirmFun(){
+     let didConfirm = confirm("Are you sure about that?");
+     if(didConfirm){
+       alert("You confirmed :)");
+     }else{
+      alert("You did not confirm :(");
+     }
+   }
+   /*sends confirm message*/
 
+   function promptFun(){
+    let val = prompt("What is your name?");
+    alert(`You've entered: ${val}`);
+   }
+   /*prompts for name*/
     </script>
-    <script src="script.js"></script>
+   
   </body>
 </html>
