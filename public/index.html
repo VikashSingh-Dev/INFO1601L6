@@ -15,25 +15,15 @@
     <!--value puts text on the button-->
     <span id="result"></span>
 
-    <script>
-      const result = document.querySelector("#result");
-      console.log(result);
+    <input id="myBtn" type="button" onclick="myFun()" value="click me"/>
 
-      console.log(result.style);//shows all the styles of the object
+    <img id="myIMG" src="https://placecage.lucidinternets.com/200/300" alt="" onload="loaded()">
 
-      result.style.backgroundColor = 'lightgrey';
-      console.log(result.getAttribute('id'));//result
-
-      result.removeAttribute('id');//removes an attribute
-      result.setAttribute('id','result');//sets an attribute
-
-      result.classList.add('content');//adds a class
-      result.classList.remove('content');//removes a class
-
-      const result = document.querySelector('#result');
-      result.innerHTML = '<h2>My Span</h2>';
-      result.style.color = 'blue'
-    </script>
+<script>
+    function loaded() {
+      console.log('Image loaded');
+    }
+</script>
    
   </body>
 </html>
