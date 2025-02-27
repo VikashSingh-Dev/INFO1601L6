@@ -15,4 +15,4 @@ let record = {
      <td>${record.name}</td>
      <td>${record.brewery_type}</td>
      <td>${recoard.website_url}</td>    
- </tr>`;
+ </tr>`; 
