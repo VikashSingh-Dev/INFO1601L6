@@ -16,60 +16,24 @@
     <span id="result"></span>
 
     <script>
-      function alertFun(){
-    alert("Hello !");
-   }
+      const result = document.querySelector("#result");
+      console.log(result);
 
-   function confirmFun(){
-     let didConfirm = confirm("Are you sure about that?");
-     if(didConfirm){
-       alert("You confirmed :)");
-     }else{
-      alert("You did not confirm :(");
-     }
-   }
+      console.log(result.style);//shows all the styles of the object
 
-   function promptFun(){
-    let val = prompt("What is your name?");
-    alert(`You've entered: ${val}`);
-   }
+      result.style.backgroundColor = 'lightgrey';
+      console.log(result.getAttribute('id'));//result
 
-            //get client data using navigator
-          console.log(window.navigator.cookieEnabled);
-          console.log(window.navigator.onLine);
-          console.log(navigator.appVersion);
-          console.log(navigator.userAgent)
-          console.log(navigator.platform);
+      result.removeAttribute('id');//removes an attribute
+      result.setAttribute('id','result');//sets an attribute
 
-          //get window metadata using window
-          console.log(window.location.href);//get full url
-          console.log(window.location.protocol);
-          console.log(window.location.hostname);
+      result.classList.add('content');//adds a class
+      result.classList.remove('content');//removes a class
 
-          function redirect(url){
-            window.location.assign(url);//redirects the page to another url
-          }
-
-          window.onload = function(event){
-            console.log("Page has loaded");
-          } 
-            //do other javascript stuff here
-
-        //Global variables declared with var are automatically added to the window object
-        var bob = 'bob';
-        const sally = 'sally';
-            
-        console.log(window.bob === bob);//true
-        console.log(window.sally === sally);//false
-
-        var document = 'hello this is my variable';
-        console.log(document);//give the DOM object instead 
-        console.log(window.document === document)//true because declaration ignored
-
+      const result = document.querySelector('#result');
+      result.innerHTML = '<h2>My Span</h2>';
+      result.style.color = 'blue'
     </script>
-
-<script src="A.js"></script>
-<script src="B.js"></script>
    
   </body>
 </html>
