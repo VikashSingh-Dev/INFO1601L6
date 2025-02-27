@@ -9,17 +9,16 @@
   <body>
     <h1>My Page</h1>
 
-    <input type="button" id="alertBtn" value="alert" onclick="alertFun()"/>
+    <input type="button" id="alertBtn" value="click me" onclick="alertFun()"/>
     <input type="button" value="confirm" onclick="confirmFun()"/>
     <input type="button" value="prompt" onclick="promptFun()"/>
-
+    <!--value puts text on the button-->
     <span id="result"></span>
 
     <script>
-   function alertFun(){
+      function alertFun(){
     alert("Hello !");
    }
-   /*sends alert message*/
 
    function confirmFun(){
      let didConfirm = confirm("Are you sure about that?");
@@ -29,14 +28,48 @@
       alert("You did not confirm :(");
      }
    }
-   /*sends confirm message*/
 
    function promptFun(){
     let val = prompt("What is your name?");
     alert(`You've entered: ${val}`);
    }
-   /*prompts for name*/
+
+            //get client data using navigator
+          console.log(window.navigator.cookieEnabled);
+          console.log(window.navigator.onLine);
+          console.log(navigator.appVersion);
+          console.log(navigator.userAgent)
+          console.log(navigator.platform);
+
+          //get window metadata using window
+          console.log(window.location.href);//get full url
+          console.log(window.location.protocol);
+          console.log(window.location.hostname);
+
+          function redirect(url){
+            window.location.assign(url);//redirects the page to another url
+          }
+
+          window.onload = function(event){
+            console.log("Page has loaded");
+          } 
+            //do other javascript stuff here
+
+        //Global variables declared with var are automatically added to the window object
+        var bob = 'bob';
+        const sally = 'sally';
+            
+        console.log(window.bob === bob);//true
+        console.log(window.sally === sally);//false
+
+        var document = 'hello this is my variable';
+        console.log(document);//give the DOM object instead 
+        console.log(window.document === document)//true because declaration ignored
+
     </script>
+
+<script src="A.js"></script>
+<script src="B.js"></script>
    
   </body>
 </html>
